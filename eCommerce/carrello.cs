@@ -11,7 +11,8 @@ namespace eCommerce
         private string _id;
         private prodotto[] Prodotti;
         private int i = 0, pos = 0;
-        private float PrezzoTotale{ set; get; }
+        private float PrezzoTotaleSconto{ set; get; }
+        private float PrezzoTotale { set; get; }
 
         public carrello(string iden)
         {
@@ -30,7 +31,8 @@ namespace eCommerce
                 p.Id = "p" + i;
                 Prodotti[i] = p;
                 i++;
-                PrezzoTotale=PrezzoTotale+p.getScontato();
+                PrezzoTotaleSconto=PrezzoTotaleSconto+p.getScontato();
+                PrezzoTotale = PrezzoTotale + p.Prezzo;
             }
         }
         private int ricerca(string id)
@@ -61,6 +63,7 @@ namespace eCommerce
         public void Rimuovi(string id)
         {
             pos = ricerca(id);
+            PrezzoTotaleSconto = PrezzoTotaleSconto - Prodotti[pos].getScontato();
             PrezzoTotale = PrezzoTotale - Prodotti[pos].Prezzo;
             Ricompatta(pos);
         }
@@ -70,6 +73,7 @@ namespace eCommerce
             {
                 Prodotti[i] = null;
             }
+            PrezzoTotaleSconto = 0;
             PrezzoTotale = 0;
         }
         public prodotto[] GetProdotti()
@@ -87,6 +91,10 @@ namespace eCommerce
         public float getTotale()
         {
             return PrezzoTotale;
+        }
+        public float getTotaleScontato()
+        {
+            return PrezzoTotaleSconto;
         }
     }
 }

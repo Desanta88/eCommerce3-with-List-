@@ -39,6 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.listViewCarrello = new System.Windows.Forms.ListView();
             this.labelPrezzoToT = new System.Windows.Forms.Label();
+            this.labelPrezzoSconto = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -117,11 +118,20 @@
             // labelPrezzoToT
             // 
             this.labelPrezzoToT.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelPrezzoToT.Location = new System.Drawing.Point(477, 450);
+            this.labelPrezzoToT.Location = new System.Drawing.Point(28, 450);
             this.labelPrezzoToT.Name = "labelPrezzoToT";
-            this.labelPrezzoToT.Size = new System.Drawing.Size(186, 23);
+            this.labelPrezzoToT.Size = new System.Drawing.Size(263, 23);
             this.labelPrezzoToT.TabIndex = 5;
             this.labelPrezzoToT.Text = "label2";
+            // 
+            // labelPrezzoSconto
+            // 
+            this.labelPrezzoSconto.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPrezzoSconto.Location = new System.Drawing.Point(502, 450);
+            this.labelPrezzoSconto.Name = "labelPrezzoSconto";
+            this.labelPrezzoSconto.Size = new System.Drawing.Size(286, 23);
+            this.labelPrezzoSconto.TabIndex = 6;
+            this.labelPrezzoSconto.Text = "label2";
             // 
             // Form1
             // 
@@ -129,6 +139,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 482);
             this.ContextMenuStrip = this.contextMenuStrip2;
+            this.Controls.Add(this.labelPrezzoSconto);
             this.Controls.Add(this.labelPrezzoToT);
             this.Controls.Add(this.listViewCarrello);
             this.Controls.Add(this.label1);
@@ -153,5 +164,6 @@
         private ListView listViewCarrello;
         private ToolStripMenuItem svuotaCarrelloToolStripMenuItem;
         private Label labelPrezzoToT;
+        private Label labelPrezzoSconto;
     }
 }

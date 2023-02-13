@@ -27,7 +27,8 @@ namespace eCommerce
             product4 = new FogliDiCartaPerLaStampa("yolo", "foglio bianco", "una foglio", 4, 7);
             prodottiPre[3] = product4;
             prodottoPredefiniti(prodottiPre);
-            labelPrezzoToT.Text = "Prezzo Totale:0";
+            labelPrezzoToT.Text = "Prezzo Totale senza sconto:0";
+            labelPrezzoSconto.Text = "Prezzo Totale con sconto:0";
             for (int i = 0; i < intes.Length; i++)
             {
                 listViewCarrello.Columns.Add(intes[i],55);
@@ -55,7 +56,8 @@ namespace eCommerce
             if (listViewCarrello.SelectedIndices.Count > 0)
                 index = listViewCarrello.SelectedIndices[0];
             listViewCarrello.Items.RemoveAt(index);
-            labelPrezzoToT.Text = "Prezzo Totale:" + car.getTotale().ToString();
+            labelPrezzoToT.Text = "Prezzo Totale senza sconto:" + car.getTotale().ToString();
+            labelPrezzoSconto.Text = "Prezzo Totale con sconto:" + car.getTotaleScontato().ToString();
         }
 
         private void svuotaCarrelloToolStripMenuItem_Click(object sender, EventArgs e)
@@ -110,7 +112,8 @@ namespace eCommerce
             {
                 ListViewItem riga = new ListViewItem(temp.ToString().Split(';'));
                 listViewCarrello.Items.Add(riga);
-                labelPrezzoToT.Text = "Prezzo Totale:" + car.getTotale().ToString();
+                labelPrezzoToT.Text = "Prezzo Totale senza sconto:" + car.getTotale().ToString();
+                labelPrezzoSconto.Text = "Prezzo Totale con sconto:" + car.getTotaleScontato().ToString();
             }
         }
     }
