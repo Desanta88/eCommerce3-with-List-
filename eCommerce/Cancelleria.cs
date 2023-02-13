@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace eCommerce
 {
-    public abstract class Cancelleria:prodotto
+    public abstract class Cancelleria:Prodotto
     {
         public Cancelleria(string pro, string name, string desc, int price) : base(pro, name, desc, price)
         {

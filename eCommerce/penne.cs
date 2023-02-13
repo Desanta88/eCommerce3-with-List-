@@ -21,7 +21,7 @@ namespace eCommerce
         {
             return Id + ";" + Nome + ";" + Produttore + ";" + Prezzo + ";" + getScontato().ToString() + ";" + Descrizione + ";" + funzionamento;
         }
-        override public prodotto Clone(prodotto p)
+        override public Prodotto Clone(Prodotto p)
         {
             Penne a = new Penne();
             a.Id = p.Id;

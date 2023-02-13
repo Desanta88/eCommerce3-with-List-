@@ -82,19 +82,19 @@
             this.toolStripMenuItem2,
             this.svuotaCarrelloToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(153, 48);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(181, 70);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem2.Text = "Rimuovi";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // svuotaCarrelloToolStripMenuItem
             // 
             this.svuotaCarrelloToolStripMenuItem.Name = "svuotaCarrelloToolStripMenuItem";
-            this.svuotaCarrelloToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.svuotaCarrelloToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.svuotaCarrelloToolStripMenuItem.Text = "Svuota carrello";
             this.svuotaCarrelloToolStripMenuItem.Click += new System.EventHandler(this.svuotaCarrelloToolStripMenuItem_Click);
             // 

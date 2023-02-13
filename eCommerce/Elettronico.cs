@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace eCommerce
 {
-    public class Elettronico :prodotto
+    public class Elettronico :Prodotto
     {
         private string modello { get; set; }
 
@@ -34,7 +34,7 @@ namespace eCommerce
         {
             return Id + ";" + Nome + ";" + Produttore + ";" + Prezzo + ";" + getScontato().ToString() + ";" + Descrizione + ";" + modello;
         }
-        override public prodotto Clone(prodotto p)
+        override public Prodotto Clone(Prodotto p)
         {
             Elettronico a = new Elettronico();
             a.Id = p.Id;

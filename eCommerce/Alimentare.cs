@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace eCommerce
 {
-    public class Alimentare:prodotto
+    public class Alimentare:Prodotto
     {
         private string[] ingredienti=new string[10];
         private DateTime dataScadenza { get; set; }
@@ -38,7 +38,7 @@ namespace eCommerce
         {
             return Id + ";" + Nome + ";" + Produttore + ";" + Prezzo + ";" + getScontato().ToString() + ";" + Descrizione+";"+dataScadenza.ToString();
         }
-        override public prodotto Clone(prodotto p)
+        override public Prodotto Clone(Prodotto p)
         {
             Alimentare a = new Alimentare();
             a.Id = p.Id;

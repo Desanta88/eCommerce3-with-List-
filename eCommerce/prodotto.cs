@@ -1,6 +1,6 @@
 ﻿namespace eCommerce
 {
-    public abstract class prodotto 
+    public class Prodotto:IEquatable<Prodotto>
     {
         private string _id;
         private string _nome;
@@ -10,19 +10,19 @@
 
         private int counter { get; set; }
 
-        public prodotto(string pro, string name,string desc,int price)
+        public Prodotto(string pro, string name,string desc,int price)
         {
             _produttore = pro;
             _nome = name;
             _descrizione = desc;
             _prezzo = price;
         }
-        public prodotto(string pro, string name)
+        public Prodotto(string pro, string name)
         {
             _produttore = pro;
             _nome = name;
         }
-        public prodotto()
+        public Prodotto()
         {
 
         }
@@ -60,9 +60,17 @@
         {
             return Id + ";" + Nome + ";"+Produttore + ";"+Prezzo +";"+getScontato().ToString()+ ";"+Descrizione;
         }
-        public virtual prodotto Clone(prodotto p)
+        public virtual Prodotto Clone(Prodotto p)
         {
             return p;
+        }
+        public bool Equals(Prodotto p)
+        {
+            if (p == null)
+                return false;
+            if (this == p)
+                return true;
+            return this.Id == p.Id;
         }
     }
 }

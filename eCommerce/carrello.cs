@@ -9,7 +9,7 @@ namespace eCommerce
     public class carrello
     {
         private string _id;
-        private prodotto[] Prodotti;
+        private List<Prodotto> Prodotti;
         private int i = 0, pos = 0;
         private float PrezzoTotaleSconto{ set; get; }
         private float PrezzoTotale { set; get; }
@@ -17,76 +17,46 @@ namespace eCommerce
         public carrello(string iden)
         {
             _id = iden;
-            Prodotti = new prodotto[100];
+            Prodotti = new List<Prodotto>();
         }
         public string Id
         {
             get { return _id; }
             private set { _id = value; }
         }
-        public void Aggiungi(prodotto p)
+        public void Aggiungi(Prodotto p)
         {
-            if (i < 100 && p != null)
+            if (p != null)
             {
                 p.Id = "p" + i;
-                Prodotti[i] = p;
+                Prodotti.Add(p);
                 i++;
                 PrezzoTotaleSconto=PrezzoTotaleSconto+p.getScontato();
                 PrezzoTotale = PrezzoTotale + p.Prezzo;
             }
         }
-        private int ricerca(string id)
+        public void Rimuovi(Prodotto p)
         {
-            int m = 0, pos = 0;
-            for (int x = 0; x < i; x++)
-            {
-                if (id == Prodotti[x].Id)
-                {
-                    return pos;
-                }
-                else
-                {
-                    m++;
-                }
-                pos = m;
-            }
-            return -1;
-        }
-        private void Ricompatta(int posi)
-        {
-            for (int i = posi; i <= (i) - 1; i++)
-            {
-                Prodotti[i] = Prodotti[i + 1];
-            }
-            i--;
-        }
-        public void Rimuovi(string id)
-        {
-            pos = ricerca(id);
+            Prodotti.Remove(p);
             PrezzoTotaleSconto = PrezzoTotaleSconto - Prodotti[pos].getScontato();
             PrezzoTotale = PrezzoTotale - Prodotti[pos].Prezzo;
-            Ricompatta(pos);
         }
         public void Svuota()
         {
-            for (int i = 0; i < Prodotti.Length; i++)
+            for (int i = 0; i < Prodotti.Count; i++)
             {
-                Prodotti[i] = null;
+                Prodotti.RemoveAt(i);
             }
             PrezzoTotaleSconto = 0;
             PrezzoTotale = 0;
         }
-        public prodotto[] GetProdotti()
+        public List<Prodotto> GetProdotti()
         {
             return Prodotti;
         }
         public int GetNProdotti()
         {
-            return i;
-        }
-        public void SetNProdotti(int p)
-        {
-            i = p;
+            return Prodotti.Count;
         }
         public float getTotale()
         {

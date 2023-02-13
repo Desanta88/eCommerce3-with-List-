@@ -21,7 +21,7 @@ namespace eCommerce
         {
             return Id + ";" + Nome + ";" + Produttore + ";" + Prezzo + ";" + getScontato().ToString() + ";" + Descrizione + ";" + grammatura;
         }
-        override public prodotto Clone(prodotto p)
+        override public Prodotto Clone(Prodotto p)
         {
             FogliDiCartaPerLaStampa a = new FogliDiCartaPerLaStampa();
             a.Id = p.Id;
