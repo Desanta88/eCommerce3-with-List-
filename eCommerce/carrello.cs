@@ -26,7 +26,7 @@ namespace eCommerce
         }
         public void Aggiungi(Prodotto p)
         {
-            if (p != null)
+            if (p != null && Prodotti.Contains(p)==false)
             {
                 p.Id = "p" + i;
                 Prodotti.Add(p);

@@ -14,7 +14,7 @@ namespace eCommerce
         public string[] intes = new string[] { "ID", "NOME","PRODUTTORE","PREZZO","SCONTATO","DESCRIZIONE","DATA SCADENZA","MODELLO","GRAMMATURA","FUNZIONAMENTO" };
         public string[] ingredienti = new string[] { "pollo" };
         public DateTime date = new DateTime(2023, 2, 6);
-        public DateTime scadenza = new DateTime(2023, 2, 14);
+        public DateTime scadenza = new DateTime(2023, 2, 28);
         public Form1()
         {
             InitializeComponent();
@@ -94,7 +94,7 @@ namespace eCommerce
                     car.Aggiungi(temp);
                 }
             }
-            if (DateTime.Now == scadenza || DateTime.Now > scadenza)
+            if ((DateTime.Now == scadenza && temp is Alimentare) || (DateTime.Now > scadenza && temp is Alimentare))
             {
                 MessageBox.Show("il prodotto è scaduto,esso verrà eliminato");
                 if (listViewProdotti.SelectedIndices.Count > 0)
